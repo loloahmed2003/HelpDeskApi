@@ -1,0 +1,1073 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpDeskAPI" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CRMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CRM_Developers" EntityType="HelpDeskAPI.CRM_Developers" />
+    <EntitySet Name="CRM_Groups" EntityType="HelpDeskAPI.CRM_Groups" />
+    <EntitySet Name="CRM_GroupsViewsPermissions" EntityType="HelpDeskAPI.CRM_GroupsViewsPermissions" />
+    <EntitySet Name="CRM_Lookups" EntityType="HelpDeskAPI.CRM_Lookups" />
+    <EntitySet Name="CRM_LookupsCustomersCategories" EntityType="HelpDeskAPI.CRM_LookupsCustomersCategories" />
+    <EntitySet Name="CRM_LookupsCustomersClasses" EntityType="HelpDeskAPI.CRM_LookupsCustomersClasses" />
+    <EntitySet Name="CRM_LookupsModules" EntityType="HelpDeskAPI.CRM_LookupsModules" />
+    <EntitySet Name="CRM_LookupsPriorities" EntityType="HelpDeskAPI.CRM_LookupsPriorities" />
+    <EntitySet Name="CRM_LookupsSubModules" EntityType="HelpDeskAPI.CRM_LookupsSubModules" />
+    <EntitySet Name="CRM_LookupsTicketsStatuses" EntityType="HelpDeskAPI.CRM_LookupsTicketsStatuses" />
+    <EntitySet Name="CRM_LookupsTicketsTypes" EntityType="HelpDeskAPI.CRM_LookupsTicketsTypes" />
+    <EntitySet Name="CRM_Menus" EntityType="HelpDeskAPI.CRM_Menus" />
+    <EntitySet Name="CRM_MenusPermissions" EntityType="HelpDeskAPI.CRM_MenusPermissions" />
+    <EntitySet Name="CRM_MenusViews" EntityType="HelpDeskAPI.CRM_MenusViews" />
+    <EntitySet Name="CRM_UsersGroups" EntityType="HelpDeskAPI.CRM_UsersGroups" />
+    <EntitySet Name="mtxTabs" EntityType="HelpDeskAPI.mtxTabs" />
+    <EntitySet Name="mtxTabsDetails" EntityType="HelpDeskAPI.mtxTabsDetails" />
+    <EntitySet Name="Translation" EntityType="HelpDeskAPI.Translation" />
+    <EntitySet Name="TSS_Clients" EntityType="HelpDeskAPI.TSS_Clients" />
+    <EntitySet Name="TSS_ClientsModules" EntityType="HelpDeskAPI.TSS_ClientsModules" />
+    <EntitySet Name="TSS_Tickets" EntityType="HelpDeskAPI.TSS_Tickets" />
+    <EntitySet Name="TSS_TicketsActions" EntityType="HelpDeskAPI.TSS_TicketsActions" />
+    <EntitySet Name="TSS_TicketsAttachedFiles" EntityType="HelpDeskAPI.TSS_TicketsAttachedFiles" />
+    <EntitySet Name="TSS_TicketsSettings" EntityType="HelpDeskAPI.TSS_TicketsSettings" />
+    <AssociationSet Name="FK_CRM_LookupsModules_CRM_Developers" Association="HelpDeskAPI.FK_CRM_LookupsModules_CRM_Developers">
+      <End Role="CRM_Developers" EntitySet="CRM_Developers" />
+      <End Role="CRM_LookupsModules" EntitySet="CRM_LookupsModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_Developers" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_Developers">
+      <End Role="CRM_Developers" EntitySet="CRM_Developers" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_GroupsViewsPermissions_CRM_Groups" Association="HelpDeskAPI.FK_CRM_GroupsViewsPermissions_CRM_Groups">
+      <End Role="CRM_Groups" EntitySet="CRM_Groups" />
+      <End Role="CRM_GroupsViewsPermissions" EntitySet="CRM_GroupsViewsPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_UsersGroups_CRM_Groups" Association="HelpDeskAPI.FK_CRM_UsersGroups_CRM_Groups">
+      <End Role="CRM_Groups" EntitySet="CRM_Groups" />
+      <End Role="CRM_UsersGroups" EntitySet="CRM_UsersGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Clients_CRM_CustomersCategories" Association="HelpDeskAPI.FK_TSS_Clients_CRM_CustomersCategories">
+      <End Role="CRM_LookupsCustomersCategories" EntitySet="CRM_LookupsCustomersCategories" />
+      <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Clients_CRM_CustomersClasses" Association="HelpDeskAPI.FK_TSS_Clients_CRM_CustomersClasses">
+      <End Role="CRM_LookupsCustomersClasses" EntitySet="CRM_LookupsCustomersClasses" />
+      <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_LookupsSubModules_CRM_LookupsModules" Association="HelpDeskAPI.FK_CRM_LookupsSubModules_CRM_LookupsModules">
+      <End Role="CRM_LookupsModules" EntitySet="CRM_LookupsModules" />
+      <End Role="CRM_LookupsSubModules" EntitySet="CRM_LookupsSubModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_ClientsModules_CRM_LookupsModules" Association="HelpDeskAPI.FK_TSS_ClientsModules_CRM_LookupsModules">
+      <End Role="CRM_LookupsModules" EntitySet="CRM_LookupsModules" />
+      <End Role="TSS_ClientsModules" EntitySet="TSS_ClientsModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsModules" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsModules">
+      <End Role="CRM_LookupsModules" EntitySet="CRM_LookupsModules" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsPriorities" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsPriorities">
+      <End Role="CRM_LookupsPriorities" EntitySet="CRM_LookupsPriorities" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_ClientsModules_CRM_LookupsSubModules" Association="HelpDeskAPI.FK_TSS_ClientsModules_CRM_LookupsSubModules">
+      <End Role="CRM_LookupsSubModules" EntitySet="CRM_LookupsSubModules" />
+      <End Role="TSS_ClientsModules" EntitySet="TSS_ClientsModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsSubModules" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsSubModules">
+      <End Role="CRM_LookupsSubModules" EntitySet="CRM_LookupsSubModules" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsTicketsStatuses" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsTicketsStatuses">
+      <End Role="CRM_LookupsTicketsStatuses" EntitySet="CRM_LookupsTicketsStatuses" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsTicketsTypes" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsTicketsTypes">
+      <End Role="CRM_LookupsTicketsTypes" EntitySet="CRM_LookupsTicketsTypes" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_MenusPermissions_CRM_Menus" Association="HelpDeskAPI.FK_CRM_MenusPermissions_CRM_Menus">
+      <End Role="CRM_Menus" EntitySet="CRM_Menus" />
+      <End Role="CRM_MenusPermissions" EntitySet="CRM_MenusPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_MenusViews_CRM_Menus" Association="HelpDeskAPI.FK_CRM_MenusViews_CRM_Menus">
+      <End Role="CRM_Menus" EntitySet="CRM_Menus" />
+      <End Role="CRM_MenusViews" EntitySet="CRM_MenusViews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mtxTabsDetails_mtxTabs" Association="HelpDeskAPI.FK_mtxTabsDetails_mtxTabs">
+      <End Role="mtxTabs" EntitySet="mtxTabs" />
+      <End Role="mtxTabsDetails" EntitySet="mtxTabsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_ClientsModules_TSS_Clients" Association="HelpDeskAPI.FK_TSS_ClientsModules_TSS_Clients">
+      <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+      <End Role="TSS_ClientsModules" EntitySet="TSS_ClientsModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_TSS_Clients" Association="HelpDeskAPI.FK_TSS_Tickets_TSS_Clients">
+      <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_TicketsActions_TSS_Tickets" Association="HelpDeskAPI.FK_TSS_TicketsActions_TSS_Tickets">
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+      <End Role="TSS_TicketsActions" EntitySet="TSS_TicketsActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_TicketsAttachedFiles_TSS_Tickets" Association="HelpDeskAPI.FK_TSS_TicketsAttachedFiles_TSS_Tickets">
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+      <End Role="TSS_TicketsAttachedFiles" EntitySet="TSS_TicketsAttachedFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_TicketsAttachedFiles_TSS_TicketsActions" Association="HelpDeskAPI.FK_TSS_TicketsAttachedFiles_TSS_TicketsActions">
+      <End Role="TSS_TicketsActions" EntitySet="TSS_TicketsActions" />
+      <End Role="TSS_TicketsAttachedFiles" EntitySet="TSS_TicketsAttachedFiles" />
+    </AssociationSet>
+    <EntitySet Name="BuildMenuItems" EntityType="HelpDeskAPI.BuildMenuItems" />
+    <EntitySet Name="GetClientsModules" EntityType="HelpDeskAPI.GetClientsModules" />
+    <EntitySet Name="GetTicketDetailsByID" EntityType="HelpDeskAPI.GetTicketDetailsByID" />
+    <EntitySet Name="CRM_Users" EntityType="HelpDeskAPI.CRM_Users" />
+    <AssociationSet Name="FK_CRM_Users_CRM_Developers" Association="HelpDeskAPI.FK_CRM_Users_CRM_Developers">
+      <End Role="CRM_Developers" EntitySet="CRM_Developers" />
+      <End Role="CRM_Users" EntitySet="CRM_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_Users_CRM_LookupsModules" Association="HelpDeskAPI.FK_CRM_Users_CRM_LookupsModules">
+      <End Role="CRM_LookupsModules" EntitySet="CRM_LookupsModules" />
+      <End Role="CRM_Users" EntitySet="CRM_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_Users_TSS_Clients" Association="HelpDeskAPI.FK_CRM_Users_TSS_Clients">
+      <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+      <End Role="CRM_Users" EntitySet="CRM_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CRM_UsersGroups_CRM_Users" Association="HelpDeskAPI.FK_CRM_UsersGroups_CRM_Users">
+      <End Role="CRM_Users" EntitySet="CRM_Users" />
+      <End Role="CRM_UsersGroups" EntitySet="CRM_UsersGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_Users" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_Users">
+      <End Role="CRM_Users" EntitySet="CRM_Users" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TSS_Tickets_CRM_Users1" Association="HelpDeskAPI.FK_TSS_Tickets_CRM_Users1">
+      <End Role="CRM_Users" EntitySet="CRM_Users" />
+      <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+    </AssociationSet>
+    <EntitySet Name="SearchSetting" EntityType="HelpDeskAPI.SearchSetting" />
+  </EntityContainer>
+  <EntityType Name="CRM_Developers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RatePerHour" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CRM_Groups">
+    <Key>
+      <PropertyRef Name="GroupsID" />
+    </Key>
+    <Property Name="GroupsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupsName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" Nullable="false" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CRM_GroupsViewsPermissions">
+    <Key>
+      <PropertyRef Name="GroupsViewsPermissionsID" />
+    </Key>
+    <Property Name="GroupsViewsPermissionsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupsViewsPermissions_GroupsID" Type="Int64" Nullable="false" />
+    <Property Name="GroupsViewsPermissions_MenusPermissionsID" Type="Int64" Nullable="false" />
+    <Property Name="GroupsViewsPermissions_MenusViewsID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="CRM_Groups" Relationship="HelpDeskAPI.FK_CRM_GroupsViewsPermissions_CRM_Groups" FromRole="CRM_GroupsViewsPermissions" ToRole="CRM_Groups" />
+  </EntityType>
+  <EntityType Name="CRM_Lookups">
+    <Key>
+      <PropertyRef Name="LookupsID" />
+    </Key>
+    <Property Name="LookupsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LookupsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LookupsGUID" Type="Guid" Nullable="false" />
+    <Property Name="LookupsParentID" Type="Int64" />
+    <Property Name="LookupsRank" Type="Int32" Nullable="false" />
+    <Property Name="LookupsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="LookupsActive" Type="Boolean" Nullable="false" />
+    <Property Name="LookupsSystem" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" Nullable="false" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CRM_LookupsCustomersCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CRM_LookupsCustomersClasses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVip" Type="Boolean" Nullable="false" />
+    <Property Name="SendSMS" Type="Boolean" />
+    <Property Name="SendEmail" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CRM_LookupsModules">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dev_ID" Type="Int64" />
+    <NavigationProperty Name="CRM_Developers" Relationship="HelpDeskAPI.FK_CRM_LookupsModules_CRM_Developers" FromRole="CRM_LookupsModules" ToRole="CRM_Developers" />
+  </EntityType>
+  <EntityType Name="CRM_LookupsPriorities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rank" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="BgColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FgColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CRM_LookupsSubModules">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LookupsModulesID" Type="Int64" Nullable="false" />
+    <Property Name="ModuleDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="CRM_LookupsModules" Relationship="HelpDeskAPI.FK_CRM_LookupsSubModules_CRM_LookupsModules" FromRole="CRM_LookupsSubModules" ToRole="CRM_LookupsModules" />
+  </EntityType>
+  <EntityType Name="CRM_LookupsTicketsStatuses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CRM_LookupsTicketsTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CRM_Menus">
+    <Key>
+      <PropertyRef Name="MenusID" />
+    </Key>
+    <Property Name="MenusID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenusCode" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MenusDisplayText" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MenusActionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenusControllerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenusURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MenusRank" Type="Int32" />
+    <Property Name="MenusParentID" Type="Int64" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CRM_MenusPermissions">
+    <Key>
+      <PropertyRef Name="MenusPermissionsID" />
+    </Key>
+    <Property Name="MenusPermissionsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenusPermissionsName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenusPermissionsCode" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MenusPermissionsMenusID" Type="Int64" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="CRM_Menus" Relationship="HelpDeskAPI.FK_CRM_MenusPermissions_CRM_Menus" FromRole="CRM_MenusPermissions" ToRole="CRM_Menus" />
+  </EntityType>
+  <EntityType Name="CRM_MenusViews">
+    <Key>
+      <PropertyRef Name="MenusViewsID" />
+    </Key>
+    <Property Name="MenusViewsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenusViewsCode" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MenusViewsName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenusViews_MenusID" Type="Int64" />
+    <Property Name="MenusViewsRank" Type="Int32" />
+    <Property Name="MenusViewsTop" Type="Int32" />
+    <Property Name="MenusViewsColumns" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MenusViewsFilter" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MenusViewsSorting" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" Nullable="false" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="CRM_Menus" Relationship="HelpDeskAPI.FK_CRM_MenusViews_CRM_Menus" FromRole="CRM_MenusViews" ToRole="CRM_Menus" />
+  </EntityType>
+  <EntityType Name="CRM_UsersGroups">
+    <Key>
+      <PropertyRef Name="UsersGroupsID" />
+    </Key>
+    <Property Name="UsersGroupsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsersGroups_UsersID" Type="Int64" Nullable="false" />
+    <Property Name="UsersGroups_GroupsID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="CRM_Groups" Relationship="HelpDeskAPI.FK_CRM_UsersGroups_CRM_Groups" FromRole="CRM_UsersGroups" ToRole="CRM_Groups" />
+    <NavigationProperty Name="CRM_Users" Relationship="HelpDeskAPI.FK_CRM_UsersGroups_CRM_Users" FromRole="CRM_UsersGroups" ToRole="CRM_Users" />
+  </EntityType>
+  <EntityType Name="mtxTabs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TableId" Type="Int32" />
+    <Property Name="SysTableName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mtxTabsDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TabId" Type="Int32" />
+    <Property Name="TableId" Type="Int32" />
+    <Property Name="SysTableName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ColumnId" Type="Int32" />
+    <Property Name="ColumnIndex" Type="Int32" />
+    <Property Name="RowGroup" Type="Int32" />
+    <Property Name="SizeInRow" Type="Int32" />
+    <Property Name="ColumnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Show" Type="Boolean" />
+    <Property Name="IsShared" Type="Boolean" />
+    <Property Name="ShowControls" Type="Boolean" />
+    <Property Name="IntMax" Type="Int32" />
+    <Property Name="ShowInGrid" Type="Boolean" />
+    <NavigationProperty Name="mtxTabs" Relationship="HelpDeskAPI.FK_mtxTabsDetails_mtxTabs" FromRole="mtxTabsDetails" ToRole="mtxTabs" />
+  </EntityType>
+  <EntityType Name="Translation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageID" Type="Int32" />
+    <Property Name="Key" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TSS_Clients">
+    <Key>
+      <PropertyRef Name="ClientsID" />
+    </Key>
+    <Property Name="ClientsID" Type="Int64" Nullable="false" />
+    <Property Name="ClientsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Clients_ClassID" Type="Int64" Nullable="false" />
+    <Property Name="Clients_CategoryID" Type="Int64" Nullable="false" />
+    <Property Name="ClientsContractEndDate" Type="DateTime" Precision="0" />
+    <Property Name="DefaultDeveloper_ID" Type="Int64" />
+    <Property Name="Telephone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SMSMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TeamViewerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TeamViewerPasswordHint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="CRM_LookupsCustomersCategories" Relationship="HelpDeskAPI.FK_TSS_Clients_CRM_CustomersCategories" FromRole="TSS_Clients" ToRole="CRM_LookupsCustomersCategories" />
+    <NavigationProperty Name="CRM_LookupsCustomersClasses" Relationship="HelpDeskAPI.FK_TSS_Clients_CRM_CustomersClasses" FromRole="TSS_Clients" ToRole="CRM_LookupsCustomersClasses" />
+  </EntityType>
+  <EntityType Name="TSS_ClientsModules">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientsID" Type="Int64" />
+    <Property Name="ModuleID" Type="Int64" />
+    <Property Name="SubModuleID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <NavigationProperty Name="CRM_LookupsModules" Relationship="HelpDeskAPI.FK_TSS_ClientsModules_CRM_LookupsModules" FromRole="TSS_ClientsModules" ToRole="CRM_LookupsModules" />
+    <NavigationProperty Name="CRM_LookupsSubModules" Relationship="HelpDeskAPI.FK_TSS_ClientsModules_CRM_LookupsSubModules" FromRole="TSS_ClientsModules" ToRole="CRM_LookupsSubModules" />
+    <NavigationProperty Name="TSS_Clients" Relationship="HelpDeskAPI.FK_TSS_ClientsModules_TSS_Clients" FromRole="TSS_ClientsModules" ToRole="TSS_Clients" />
+  </EntityType>
+  <EntityType Name="TSS_Tickets">
+    <Key>
+      <PropertyRef Name="TicketsID" />
+    </Key>
+    <Property Name="TicketsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketsSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TicketsCreatedTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Tickets_TypeID" Type="Int64" Nullable="false" />
+    <Property Name="Tickets_StatusID" Type="Int64" Nullable="false" />
+    <Property Name="Tickets_Cust_ID" Type="Int64" Nullable="false" />
+    <Property Name="Tickets_User_ID" Type="Int64" />
+    <Property Name="Tickets_Mod_ID" Type="Int64" />
+    <Property Name="Tickets_Smod_ID" Type="Int64" />
+    <Property Name="Tickets_Priority_ID" Type="Int64" Nullable="false" />
+    <Property Name="Tickets_DeveloperID" Type="Int64" />
+    <Property Name="TicketsAction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TicketsSummery" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TicketsDesc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsClosed" Type="Boolean" />
+    <Property Name="ClosedTime" Type="DateTime" Precision="3" />
+    <Property Name="IsSolved" Type="Boolean" />
+    <Property Name="SolvedTime" Type="DateTime" Precision="3" />
+    <Property Name="IsArchived" Type="Boolean" />
+    <Property Name="TakenFromClientUserID" Type="Int64" />
+    <Property Name="TakenFromClientUserFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="CRM_Developers" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_Developers" FromRole="TSS_Tickets" ToRole="CRM_Developers" />
+    <NavigationProperty Name="CRM_LookupsModules" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsModules" FromRole="TSS_Tickets" ToRole="CRM_LookupsModules" />
+    <NavigationProperty Name="CRM_LookupsPriorities" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsPriorities" FromRole="TSS_Tickets" ToRole="CRM_LookupsPriorities" />
+    <NavigationProperty Name="CRM_LookupsSubModules" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsSubModules" FromRole="TSS_Tickets" ToRole="CRM_LookupsSubModules" />
+    <NavigationProperty Name="CRM_LookupsTicketsStatuses" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsTicketsStatuses" FromRole="TSS_Tickets" ToRole="CRM_LookupsTicketsStatuses" />
+    <NavigationProperty Name="CRM_LookupsTicketsTypes" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_LookupsTicketsTypes" FromRole="TSS_Tickets" ToRole="CRM_LookupsTicketsTypes" />
+    <NavigationProperty Name="TSS_Clients" Relationship="HelpDeskAPI.FK_TSS_Tickets_TSS_Clients" FromRole="TSS_Tickets" ToRole="TSS_Clients" />
+    <NavigationProperty Name="CRM_Users" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_Users" FromRole="TSS_Tickets" ToRole="CRM_Users" />
+    <NavigationProperty Name="TakenFromClientUser" Relationship="HelpDeskAPI.FK_TSS_Tickets_CRM_Users1" FromRole="TSS_Tickets" ToRole="CRM_Users" />
+  </EntityType>
+  <EntityType Name="TSS_TicketsActions">
+    <Key>
+      <PropertyRef Name="ActionsID" />
+    </Key>
+    <Property Name="ActionsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Actions_TicketsID" Type="Int64" Nullable="false" />
+    <Property Name="ActionsNotes" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Actions_DurationTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActionsIsSendEmail" Type="Boolean" />
+    <Property Name="ActionsIsSendSMS" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="TSS_Tickets" Relationship="HelpDeskAPI.FK_TSS_TicketsActions_TSS_Tickets" FromRole="TSS_TicketsActions" ToRole="TSS_Tickets" />
+  </EntityType>
+  <EntityType Name="TSS_TicketsAttachedFiles">
+    <Key>
+      <PropertyRef Name="FilesID" />
+    </Key>
+    <Property Name="FilesID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Files_TicketsID" Type="Int64" />
+    <Property Name="Files_TicketsActionsID" Type="Int64" />
+    <Property Name="FilesName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FilesTypes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="TSS_Tickets" Relationship="HelpDeskAPI.FK_TSS_TicketsAttachedFiles_TSS_Tickets" FromRole="TSS_TicketsAttachedFiles" ToRole="TSS_Tickets" />
+    <NavigationProperty Name="TSS_TicketsActions" Relationship="HelpDeskAPI.FK_TSS_TicketsAttachedFiles_TSS_TicketsActions" FromRole="TSS_TicketsAttachedFiles" ToRole="TSS_TicketsActions" />
+  </EntityType>
+  <EntityType Name="TSS_TicketsSettings">
+    <Key>
+      <PropertyRef Name="TicketsSettingsID" />
+    </Key>
+    <Property Name="TicketsSettingsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketsSettingsName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CRM_LookupsModules_CRM_Developers">
+    <End Type="HelpDeskAPI.CRM_Developers" Role="CRM_Developers" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.CRM_LookupsModules" Role="CRM_LookupsModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Developers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CRM_LookupsModules">
+        <PropertyRef Name="Dev_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_Developers">
+    <End Type="HelpDeskAPI.CRM_Developers" Role="CRM_Developers" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Developers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_GroupsViewsPermissions_CRM_Groups">
+    <End Type="HelpDeskAPI.CRM_Groups" Role="CRM_Groups" Multiplicity="1" />
+    <End Type="HelpDeskAPI.CRM_GroupsViewsPermissions" Role="CRM_GroupsViewsPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Groups">
+        <PropertyRef Name="GroupsID" />
+      </Principal>
+      <Dependent Role="CRM_GroupsViewsPermissions">
+        <PropertyRef Name="GroupsViewsPermissions_GroupsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_UsersGroups_CRM_Groups">
+    <End Type="HelpDeskAPI.CRM_Groups" Role="CRM_Groups" Multiplicity="1" />
+    <End Type="HelpDeskAPI.CRM_UsersGroups" Role="CRM_UsersGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Groups">
+        <PropertyRef Name="GroupsID" />
+      </Principal>
+      <Dependent Role="CRM_UsersGroups">
+        <PropertyRef Name="UsersGroups_GroupsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Clients_CRM_CustomersCategories">
+    <End Type="HelpDeskAPI.CRM_LookupsCustomersCategories" Role="CRM_LookupsCustomersCategories" Multiplicity="1" />
+    <End Type="HelpDeskAPI.TSS_Clients" Role="TSS_Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsCustomersCategories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Clients">
+        <PropertyRef Name="Clients_CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Clients_CRM_CustomersClasses">
+    <End Type="HelpDeskAPI.CRM_LookupsCustomersClasses" Role="CRM_LookupsCustomersClasses" Multiplicity="1" />
+    <End Type="HelpDeskAPI.TSS_Clients" Role="TSS_Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsCustomersClasses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Clients">
+        <PropertyRef Name="Clients_ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_LookupsSubModules_CRM_LookupsModules">
+    <End Type="HelpDeskAPI.CRM_LookupsModules" Role="CRM_LookupsModules" Multiplicity="1" />
+    <End Type="HelpDeskAPI.CRM_LookupsSubModules" Role="CRM_LookupsSubModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsModules">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CRM_LookupsSubModules">
+        <PropertyRef Name="LookupsModulesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_ClientsModules_CRM_LookupsModules">
+    <End Type="HelpDeskAPI.CRM_LookupsModules" Role="CRM_LookupsModules" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_ClientsModules" Role="TSS_ClientsModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsModules">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_ClientsModules">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_LookupsModules">
+    <End Type="HelpDeskAPI.CRM_LookupsModules" Role="CRM_LookupsModules" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsModules">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_Mod_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_LookupsPriorities">
+    <End Type="HelpDeskAPI.CRM_LookupsPriorities" Role="CRM_LookupsPriorities" Multiplicity="1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsPriorities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_Priority_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_ClientsModules_CRM_LookupsSubModules">
+    <End Type="HelpDeskAPI.CRM_LookupsSubModules" Role="CRM_LookupsSubModules" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_ClientsModules" Role="TSS_ClientsModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsSubModules">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_ClientsModules">
+        <PropertyRef Name="SubModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_LookupsSubModules">
+    <End Type="HelpDeskAPI.CRM_LookupsSubModules" Role="CRM_LookupsSubModules" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsSubModules">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_Smod_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_LookupsTicketsStatuses">
+    <End Type="HelpDeskAPI.CRM_LookupsTicketsStatuses" Role="CRM_LookupsTicketsStatuses" Multiplicity="1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsTicketsStatuses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_LookupsTicketsTypes">
+    <End Type="HelpDeskAPI.CRM_LookupsTicketsTypes" Role="CRM_LookupsTicketsTypes" Multiplicity="1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsTicketsTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_MenusPermissions_CRM_Menus">
+    <End Type="HelpDeskAPI.CRM_Menus" Role="CRM_Menus" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.CRM_MenusPermissions" Role="CRM_MenusPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Menus">
+        <PropertyRef Name="MenusID" />
+      </Principal>
+      <Dependent Role="CRM_MenusPermissions">
+        <PropertyRef Name="MenusPermissionsMenusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_MenusViews_CRM_Menus">
+    <End Type="HelpDeskAPI.CRM_Menus" Role="CRM_Menus" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.CRM_MenusViews" Role="CRM_MenusViews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Menus">
+        <PropertyRef Name="MenusID" />
+      </Principal>
+      <Dependent Role="CRM_MenusViews">
+        <PropertyRef Name="MenusViews_MenusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mtxTabsDetails_mtxTabs">
+    <End Type="HelpDeskAPI.mtxTabs" Role="mtxTabs" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.mtxTabsDetails" Role="mtxTabsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mtxTabs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="mtxTabsDetails">
+        <PropertyRef Name="TabId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_ClientsModules_TSS_Clients">
+    <End Type="HelpDeskAPI.TSS_Clients" Role="TSS_Clients" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_ClientsModules" Role="TSS_ClientsModules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSS_Clients">
+        <PropertyRef Name="ClientsID" />
+      </Principal>
+      <Dependent Role="TSS_ClientsModules">
+        <PropertyRef Name="ClientsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_TSS_Clients">
+    <End Type="HelpDeskAPI.TSS_Clients" Role="TSS_Clients" Multiplicity="1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSS_Clients">
+        <PropertyRef Name="ClientsID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_Cust_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_TicketsActions_TSS_Tickets">
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="1" />
+    <End Type="HelpDeskAPI.TSS_TicketsActions" Role="TSS_TicketsActions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSS_Tickets">
+        <PropertyRef Name="TicketsID" />
+      </Principal>
+      <Dependent Role="TSS_TicketsActions">
+        <PropertyRef Name="Actions_TicketsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_TicketsAttachedFiles_TSS_Tickets">
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_TicketsAttachedFiles" Role="TSS_TicketsAttachedFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSS_Tickets">
+        <PropertyRef Name="TicketsID" />
+      </Principal>
+      <Dependent Role="TSS_TicketsAttachedFiles">
+        <PropertyRef Name="Files_TicketsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_TicketsAttachedFiles_TSS_TicketsActions">
+    <End Type="HelpDeskAPI.TSS_TicketsActions" Role="TSS_TicketsActions" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_TicketsAttachedFiles" Role="TSS_TicketsAttachedFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSS_TicketsActions">
+        <PropertyRef Name="ActionsID" />
+      </Principal>
+      <Dependent Role="TSS_TicketsAttachedFiles">
+        <PropertyRef Name="Files_TicketsActionsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BuildMenuItems">
+    <Key>
+      <PropertyRef Name="GroupsName" />
+      <PropertyRef Name="UsersFullName" />
+      <PropertyRef Name="MenusID" />
+      <PropertyRef Name="MenusCode" />
+      <PropertyRef Name="MenusDisplayText" />
+      <PropertyRef Name="UpdatedCounts" />
+      <PropertyRef Name="UsersID" />
+    </Key>
+    <Property Name="GroupsName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UsersFullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MenusID" Type="Int64" Nullable="false" />
+    <Property Name="MenusCode" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MenusDisplayText" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MenusActionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenusControllerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenusURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MenusRank" Type="Int32" />
+    <Property Name="MenusParentID" Type="Int64" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UsersID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GetClientsModules">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="SubDescription" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="UpdatedCounts" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="ClientsID" Type="Int64" />
+    <Property Name="ClientsName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ModuleID" Type="Int64" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubModuleID" Type="Int64" />
+    <Property Name="SubDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dev_ID" Type="Int64" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="GetTicketDetailsByID">
+    <Key>
+      <PropertyRef Name="TicketsID" />
+      <PropertyRef Name="TicketsCreatedTime" />
+      <PropertyRef Name="Tickets_TypeID" />
+      <PropertyRef Name="Tickets_StatusID" />
+      <PropertyRef Name="Tickets_Cust_ID" />
+      <PropertyRef Name="Tickets_User_ID" />
+      <PropertyRef Name="Tickets_Priority_ID" />
+      <PropertyRef Name="TicketsSummery" />
+      <PropertyRef Name="TicketsDesc" />
+    </Key>
+    <Property Name="TicketsID" Type="Int64" Nullable="false" />
+    <Property Name="TicketsSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TicketsCreatedTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Tickets_TypeID" Type="Int64" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tickets_StatusID" Type="Int64" Nullable="false" />
+    <Property Name="StatusDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tickets_Cust_ID" Type="Int64" Nullable="false" />
+    <Property Name="ClientsName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tickets_User_ID" Type="Int64" Nullable="false" />
+    <Property Name="UsersUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsersFullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tickets_Mod_ID" Type="Int64" />
+    <Property Name="ModDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dev_ID" Type="Int64" />
+    <Property Name="Tickets_Smod_ID" Type="Int64" />
+    <Property Name="SmodDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LookupsModulesID" Type="Int64" />
+    <Property Name="Tickets_Priority_ID" Type="Int64" Nullable="false" />
+    <Property Name="PriorityDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rank" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Tickets_DeveloperID" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TicketsAction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TicketsSummery" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TicketsDesc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsClosed" Type="Boolean" />
+    <Property Name="ClosedTime" Type="DateTime" Precision="3" />
+    <Property Name="IsArchived" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="BgColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FgColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CRM_Users">
+    <Key>
+      <PropertyRef Name="UsersID" />
+    </Key>
+    <Property Name="UsersID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsersFullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UsersGUID" Type="Guid" Nullable="false" />
+    <Property Name="UsersUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsersPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsersEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsersMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsersPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsersPhoneExt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsersIsAdmin" Type="Boolean" />
+    <Property Name="UsersActive" Type="Boolean" />
+    <Property Name="ClientsID" Type="Int64" />
+    <Property Name="DeveloperID" Type="Int64" />
+    <Property Name="ModuleID" Type="Int64" />
+    <Property Name="SendEmail" Type="Boolean" />
+    <Property Name="SendSMS" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedByID" Type="Int64" />
+    <Property Name="Updated" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedByID" Type="Int64" />
+    <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+    <Property Name="Deleted" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedByID" Type="Int64" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="CRM_Developers" Relationship="HelpDeskAPI.FK_CRM_Users_CRM_Developers" FromRole="CRM_Users" ToRole="CRM_Developers" />
+    <NavigationProperty Name="CRM_LookupsModules" Relationship="HelpDeskAPI.FK_CRM_Users_CRM_LookupsModules" FromRole="CRM_Users" ToRole="CRM_LookupsModules" />
+    <NavigationProperty Name="TSS_Clients" Relationship="HelpDeskAPI.FK_CRM_Users_TSS_Clients" FromRole="CRM_Users" ToRole="TSS_Clients" />
+  </EntityType>
+  <Association Name="FK_CRM_Users_CRM_Developers">
+    <End Type="HelpDeskAPI.CRM_Developers" Role="CRM_Developers" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.CRM_Users" Role="CRM_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Developers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CRM_Users">
+        <PropertyRef Name="DeveloperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_Users_CRM_LookupsModules">
+    <End Type="HelpDeskAPI.CRM_LookupsModules" Role="CRM_LookupsModules" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.CRM_Users" Role="CRM_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_LookupsModules">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CRM_Users">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_Users_TSS_Clients">
+    <End Type="HelpDeskAPI.TSS_Clients" Role="TSS_Clients" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.CRM_Users" Role="CRM_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TSS_Clients">
+        <PropertyRef Name="ClientsID" />
+      </Principal>
+      <Dependent Role="CRM_Users">
+        <PropertyRef Name="ClientsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CRM_UsersGroups_CRM_Users">
+    <End Type="HelpDeskAPI.CRM_Users" Role="CRM_Users" Multiplicity="1" />
+    <End Type="HelpDeskAPI.CRM_UsersGroups" Role="CRM_UsersGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Users">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="CRM_UsersGroups">
+        <PropertyRef Name="UsersGroups_UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_Users">
+    <End Type="HelpDeskAPI.CRM_Users" Role="CRM_Users" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Users">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="Tickets_User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TSS_Tickets_CRM_Users1">
+    <End Type="HelpDeskAPI.CRM_Users" Role="CRM_Users" Multiplicity="0..1" />
+    <End Type="HelpDeskAPI.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CRM_Users">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="TSS_Tickets">
+        <PropertyRef Name="TakenFromClientUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SearchSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ViewName" />
+      <PropertyRef Name="FieldName" />
+      <PropertyRef Name="AllowHidden" />
+      <PropertyRef Name="AllowResize" />
+      <PropertyRef Name="FieldType" />
+      <PropertyRef Name="Rank" />
+      <PropertyRef Name="SearchLanguage" />
+      <PropertyRef Name="Operation" />
+      <PropertyRef Name="WildCard" />
+      <PropertyRef Name="DataType" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ViewName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FieldName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EngHeader" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EngHeaderAlignment" Type="Byte" />
+    <Property Name="ArbHeader" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArbHeaderAlignment" Type="Byte" />
+    <Property Name="ColumnAlignment" Type="Byte" />
+    <Property Name="FieldLength" Type="Byte" />
+    <Property Name="ColumnWidth" Type="Int32" />
+    <Property Name="Hidden" Type="Byte" />
+    <Property Name="IsGridField" Type="Byte" />
+    <Property Name="IsCreteriaField" Type="Byte" />
+    <Property Name="AllowHidden" Type="Byte" Nullable="false" />
+    <Property Name="AllowResize" Type="Byte" Nullable="false" />
+    <Property Name="FieldType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="SearchLanguage" Type="Byte" Nullable="false" />
+    <Property Name="Operation" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WildCard" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DataType" Type="Byte" Nullable="false" />
+    <Property Name="TextControl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ColumnStyle" Type="Byte" />
+    <Property Name="AllowRowFiltering" Type="Byte" />
+    <Property Name="SortIndicator" Type="Byte" />
+    <Property Name="AutoFitColumns" Type="Byte" />
+    <Property Name="PerformAutoResize" Type="Byte" />
+    <Property Name="Focus" Type="Boolean" />
+  </EntityType>
+</Schema>

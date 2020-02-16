@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db0f62d4c9b94efba42be4580e7af805" Name="Diagram1">
+        <EntityTypeShape EntityType="MatrixCRMModel.CRM_LookupsCustomersCategories" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrixCRMModel.CRM_LookupsCustomersClasses" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrixCRMModel.CRM_LookupsPriorities" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrixCRMModel.CRM_LookupsTicketsStatuses" Width="1.5" PointX="4.125" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrixCRMModel.CRM_LookupsTicketsTypes" Width="1.5" PointX="6.375" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrixCRMModel.sysdiagram" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MatrixCRMModel.TSS_Tickets" Width="1.5" PointX="5.25" PointY="2.25" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsPriorities" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsTicketsStatuses" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsTicketsTypes" />
+        <EntityTypeShape EntityType="MatrixCRMModel.TSS_TicketsAttachedFiles" Width="2" PointX="10.125" PointY="2.25" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_TicketsAttachedFiles_TSS_Tickets" />
+        <EntityTypeShape EntityType="MatrixCRMModel.Module" Width="1.5" PointX="10.125" PointY="8.875" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Tickets_Modules" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MatrixCRMModel.TSS_Clients" Width="1.625" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Clients_CRM_CustomersCategories" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Clients_CRM_CustomersClasses" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Tickets_TSS_Clients" />
+        <EntityTypeShape EntityType="MatrixCRMModel.CRM_Users" Width="1.5" PointX="8.375" PointY="12.125" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_Clients_CRM_Users" />
+        <EntityTypeShape EntityType="MatrixCRMModel.TSS_TicketsActions" Width="1.5" PointX="15" PointY="5.25" />
+        <AssociationConnector Association="MatrixCRMModel.FK_TSS_TicketsActions_TSS_Tickets" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

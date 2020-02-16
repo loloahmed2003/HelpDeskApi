@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MatrixCRMModelStoreContainer" CdmEntityContainer="MatrixCRMEntities">
+    <EntitySetMapping Name="CRM_Developers">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_Developers">
+        <MappingFragment StoreEntitySet="CRM_Developers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RatePerHour" ColumnName="RatePerHour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_Groups">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_Groups">
+        <MappingFragment StoreEntitySet="CRM_Groups">
+          <ScalarProperty Name="GroupsID" ColumnName="GroupsID" />
+          <ScalarProperty Name="GroupsName" ColumnName="GroupsName" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_GroupsViewsPermissions">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_GroupsViewsPermissions">
+        <MappingFragment StoreEntitySet="CRM_GroupsViewsPermissions">
+          <ScalarProperty Name="GroupsViewsPermissionsID" ColumnName="GroupsViewsPermissionsID" />
+          <ScalarProperty Name="GroupsViewsPermissions_GroupsID" ColumnName="GroupsViewsPermissions_GroupsID" />
+          <ScalarProperty Name="GroupsViewsPermissions_MenusPermissionsID" ColumnName="GroupsViewsPermissions_MenusPermissionsID" />
+          <ScalarProperty Name="GroupsViewsPermissions_MenusViewsID" ColumnName="GroupsViewsPermissions_MenusViewsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_Lookups">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_Lookups">
+        <MappingFragment StoreEntitySet="CRM_Lookups">
+          <ScalarProperty Name="LookupsID" ColumnName="LookupsID" />
+          <ScalarProperty Name="LookupsName" ColumnName="LookupsName" />
+          <ScalarProperty Name="LookupsGUID" ColumnName="LookupsGUID" />
+          <ScalarProperty Name="LookupsParentID" ColumnName="LookupsParentID" />
+          <ScalarProperty Name="LookupsRank" ColumnName="LookupsRank" />
+          <ScalarProperty Name="LookupsDefault" ColumnName="LookupsDefault" />
+          <ScalarProperty Name="LookupsActive" ColumnName="LookupsActive" />
+          <ScalarProperty Name="LookupsSystem" ColumnName="LookupsSystem" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_LookupsCustomersCategories">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsCustomersCategories">
+        <MappingFragment StoreEntitySet="CRM_LookupsCustomersCategories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_LookupsCustomersClasses">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsCustomersClasses">
+        <MappingFragment StoreEntitySet="CRM_LookupsCustomersClasses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVip" ColumnName="IsVip" />
+          <ScalarProperty Name="SendSMS" ColumnName="SendSMS" />
+          <ScalarProperty Name="SendEmail" ColumnName="SendEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_LookupsModules">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsModules">
+        <MappingFragment StoreEntitySet="CRM_LookupsModules">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Dev_ID" ColumnName="Dev_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_LookupsPriorities">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsPriorities">
+        <MappingFragment StoreEntitySet="CRM_LookupsPriorities">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="BgColor" ColumnName="BgColor" />
+          <ScalarProperty Name="FgColor" ColumnName="FgColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_LookupsSubModules">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsSubModules">
+        <MappingFragment StoreEntitySet="CRM_LookupsSubModules">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LookupsModulesID" ColumnName="LookupsModulesID" />
+          <ScalarProperty Name="ModuleDesc" ColumnName="ModuleDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_LookupsTicketsStatuses">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsTicketsStatuses">
+        <MappingFragment StoreEntitySet="CRM_LookupsTicketsStatuses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_LookupsTicketsTypes">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsTicketsTypes">
+        <MappingFragment StoreEntitySet="CRM_LookupsTicketsTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_Menus">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_Menus">
+        <MappingFragment StoreEntitySet="CRM_Menus">
+          <ScalarProperty Name="MenusID" ColumnName="MenusID" />
+          <ScalarProperty Name="MenusCode" ColumnName="MenusCode" />
+          <ScalarProperty Name="MenusDisplayText" ColumnName="MenusDisplayText" />
+          <ScalarProperty Name="MenusActionName" ColumnName="MenusActionName" />
+          <ScalarProperty Name="MenusControllerName" ColumnName="MenusControllerName" />
+          <ScalarProperty Name="MenusURL" ColumnName="MenusURL" />
+          <ScalarProperty Name="MenusRank" ColumnName="MenusRank" />
+          <ScalarProperty Name="MenusParentID" ColumnName="MenusParentID" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_MenusPermissions">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_MenusPermissions">
+        <MappingFragment StoreEntitySet="CRM_MenusPermissions">
+          <ScalarProperty Name="MenusPermissionsID" ColumnName="MenusPermissionsID" />
+          <ScalarProperty Name="MenusPermissionsName" ColumnName="MenusPermissionsName" />
+          <ScalarProperty Name="MenusPermissionsCode" ColumnName="MenusPermissionsCode" />
+          <ScalarProperty Name="MenusPermissionsMenusID" ColumnName="MenusPermissionsMenusID" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_MenusViews">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_MenusViews">
+        <MappingFragment StoreEntitySet="CRM_MenusViews">
+          <ScalarProperty Name="MenusViewsID" ColumnName="MenusViewsID" />
+          <ScalarProperty Name="MenusViewsCode" ColumnName="MenusViewsCode" />
+          <ScalarProperty Name="MenusViewsName" ColumnName="MenusViewsName" />
+          <ScalarProperty Name="MenusViews_MenusID" ColumnName="MenusViews_MenusID" />
+          <ScalarProperty Name="MenusViewsRank" ColumnName="MenusViewsRank" />
+          <ScalarProperty Name="MenusViewsTop" ColumnName="MenusViewsTop" />
+          <ScalarProperty Name="MenusViewsColumns" ColumnName="MenusViewsColumns" />
+          <ScalarProperty Name="MenusViewsFilter" ColumnName="MenusViewsFilter" />
+          <ScalarProperty Name="MenusViewsSorting" ColumnName="MenusViewsSorting" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_Users">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_Users">
+        <MappingFragment StoreEntitySet="CRM_Users">
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="UsersFullName" ColumnName="UsersFullName" />
+          <ScalarProperty Name="UsersGUID" ColumnName="UsersGUID" />
+          <ScalarProperty Name="UsersUserName" ColumnName="UsersUserName" />
+          <ScalarProperty Name="UsersPassword" ColumnName="UsersPassword" />
+          <ScalarProperty Name="UsersEmail" ColumnName="UsersEmail" />
+          <ScalarProperty Name="UsersMobile" ColumnName="UsersMobile" />
+          <ScalarProperty Name="UsersPhone" ColumnName="UsersPhone" />
+          <ScalarProperty Name="UsersPhoneExt" ColumnName="UsersPhoneExt" />
+          <ScalarProperty Name="UsersIsAdmin" ColumnName="UsersIsAdmin" />
+          <ScalarProperty Name="UsersActive" ColumnName="UsersActive" />
+          <ScalarProperty Name="ClientsID" ColumnName="ClientsID" />
+          <ScalarProperty Name="DeveloperID" ColumnName="DeveloperID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="SendEmail" ColumnName="SendEmail" />
+          <ScalarProperty Name="SendSMS" ColumnName="SendSMS" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM_UsersGroups">
+      <EntityTypeMapping TypeName="MatrixCRMModel.CRM_UsersGroups">
+        <MappingFragment StoreEntitySet="CRM_UsersGroups">
+          <ScalarProperty Name="UsersGroupsID" ColumnName="UsersGroupsID" />
+          <ScalarProperty Name="UsersGroups_UsersID" ColumnName="UsersGroups_UsersID" />
+          <ScalarProperty Name="UsersGroups_GroupsID" ColumnName="UsersGroups_GroupsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mtxTabs">
+      <EntityTypeMapping TypeName="MatrixCRMModel.mtxTab">
+        <MappingFragment StoreEntitySet="mtxTabs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="SysTableName" ColumnName="SysTableName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mtxTabsDetails">
+      <EntityTypeMapping TypeName="MatrixCRMModel.mtxTabsDetail">
+        <MappingFragment StoreEntitySet="mtxTabsDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TabId" ColumnName="TabId" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="SysTableName" ColumnName="SysTableName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="ColumnId" ColumnName="ColumnId" />
+          <ScalarProperty Name="ColumnIndex" ColumnName="ColumnIndex" />
+          <ScalarProperty Name="RowGroup" ColumnName="RowGroup" />
+          <ScalarProperty Name="SizeInRow" ColumnName="SizeInRow" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="Show" ColumnName="Show" />
+          <ScalarProperty Name="IsShared" ColumnName="IsShared" />
+          <ScalarProperty Name="ShowControls" ColumnName="ShowControls" />
+          <ScalarProperty Name="IntMax" ColumnName="IntMax" />
+          <ScalarProperty Name="ShowInGrid" ColumnName="ShowInGrid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MatrixCRMModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Translations">
+      <EntityTypeMapping TypeName="MatrixCRMModel.Translation">
+        <MappingFragment StoreEntitySet="Translation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSS_Clients">
+      <EntityTypeMapping TypeName="MatrixCRMModel.TSS_Clients">
+        <MappingFragment StoreEntitySet="TSS_Clients">
+          <ScalarProperty Name="ClientsID" ColumnName="ClientsID" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="ClientsName" ColumnName="ClientsName" />
+          <ScalarProperty Name="Clients_ClassID" ColumnName="Clients_ClassID" />
+          <ScalarProperty Name="Clients_CategoryID" ColumnName="Clients_CategoryID" />
+          <ScalarProperty Name="ClientsContractEndDate" ColumnName="ClientsContractEndDate" />
+          <ScalarProperty Name="DefaultDeveloper_ID" ColumnName="DefaultDeveloper_ID" />
+          <ScalarProperty Name="contactperson" ColumnName="contactperson" />
+          <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+          <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+          <ScalarProperty Name="SMSMobile" ColumnName="SMSMobile" />
+          <ScalarProperty Name="TeamViewerID" ColumnName="TeamViewerID" />
+          <ScalarProperty Name="TeamViewerPasswordHint" ColumnName="TeamViewerPasswordHint" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSS_ClientsModules">
+      <EntityTypeMapping TypeName="MatrixCRMModel.TSS_ClientsModules">
+        <MappingFragment StoreEntitySet="TSS_ClientsModules">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ClientsID" ColumnName="ClientsID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="SubModuleID" ColumnName="SubModuleID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSS_Tickets">
+      <EntityTypeMapping TypeName="MatrixCRMModel.TSS_Tickets">
+        <MappingFragment StoreEntitySet="TSS_Tickets">
+          <ScalarProperty Name="TicketsID" ColumnName="TicketsID" />
+          <ScalarProperty Name="TicketsSubject" ColumnName="TicketsSubject" />
+          <ScalarProperty Name="TicketsCreatedTime" ColumnName="TicketsCreatedTime" />
+          <ScalarProperty Name="Tickets_TypeID" ColumnName="Tickets_TypeID" />
+          <ScalarProperty Name="Tickets_StatusID" ColumnName="Tickets_StatusID" />
+          <ScalarProperty Name="Tickets_Cust_ID" ColumnName="Tickets_Cust_ID" />
+          <ScalarProperty Name="Tickets_User_ID" ColumnName="Tickets_User_ID" />
+          <ScalarProperty Name="Tickets_Mod_ID" ColumnName="Tickets_Mod_ID" />
+          <ScalarProperty Name="Tickets_Smod_ID" ColumnName="Tickets_Smod_ID" />
+          <ScalarProperty Name="Tickets_Priority_ID" ColumnName="Tickets_Priority_ID" />
+          <ScalarProperty Name="Tickets_DeveloperID" ColumnName="Tickets_DeveloperID" />
+          <ScalarProperty Name="TicketsAction" ColumnName="TicketsAction" />
+          <ScalarProperty Name="TicketsSummery" ColumnName="TicketsSummery" />
+          <ScalarProperty Name="TicketsDesc" ColumnName="TicketsDesc" />
+          <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+          <ScalarProperty Name="ClosedTime" ColumnName="ClosedTime" />
+          <ScalarProperty Name="IsSolved" ColumnName="IsSolved" />
+          <ScalarProperty Name="SolvedTime" ColumnName="SolvedTime" />
+          <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
+          <ScalarProperty Name="TakenFromClientUserID" ColumnName="TakenFromClientUserID" />
+          <ScalarProperty Name="TakenFromClientUserFullName" ColumnName="TakenFromClientUserFullName" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSS_TicketsActions">
+      <EntityTypeMapping TypeName="MatrixCRMModel.TSS_TicketsActions">
+        <MappingFragment StoreEntitySet="TSS_TicketsActions">
+          <ScalarProperty Name="ActionsID" ColumnName="ActionsID" />
+          <ScalarProperty Name="Actions_TicketsID" ColumnName="Actions_TicketsID" />
+          <ScalarProperty Name="ActionsNotes" ColumnName="ActionsNotes" />
+          <ScalarProperty Name="Actions_DurationTime" ColumnName="Actions_DurationTime" />
+          <ScalarProperty Name="ActionsIsSendEmail" ColumnName="ActionsIsSendEmail" />
+          <ScalarProperty Name="ActionsIsSendSMS" ColumnName="ActionsIsSendSMS" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSS_TicketsAttachedFiles">
+      <EntityTypeMapping TypeName="MatrixCRMModel.TSS_TicketsAttachedFiles">
+        <MappingFragment StoreEntitySet="TSS_TicketsAttachedFiles">
+          <ScalarProperty Name="FilesID" ColumnName="FilesID" />
+          <ScalarProperty Name="Files_TicketsID" ColumnName="Files_TicketsID" />
+          <ScalarProperty Name="Files_TicketsActionsID" ColumnName="Files_TicketsActionsID" />
+          <ScalarProperty Name="FilesName" ColumnName="FilesName" />
+          <ScalarProperty Name="FilesTypes" ColumnName="FilesTypes" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TSS_TicketsSettings">
+      <EntityTypeMapping TypeName="MatrixCRMModel.TSS_TicketsSettings">
+        <MappingFragment StoreEntitySet="TSS_TicketsSettings">
+          <ScalarProperty Name="TicketsSettingsID" ColumnName="TicketsSettingsID" />
+          <ScalarProperty Name="TicketsSettingsName" ColumnName="TicketsSettingsName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SearchSettings">
+      <EntityTypeMapping TypeName="MatrixCRMModel.SearchSetting">
+        <MappingFragment StoreEntitySet="SearchSetting">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ViewName" ColumnName="ViewName" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="EngHeader" ColumnName="EngHeader" />
+          <ScalarProperty Name="EngHeaderAlignment" ColumnName="EngHeaderAlignment" />
+          <ScalarProperty Name="ArbHeader" ColumnName="ArbHeader" />
+          <ScalarProperty Name="ArbHeaderAlignment" ColumnName="ArbHeaderAlignment" />
+          <ScalarProperty Name="ColumnAlignment" ColumnName="ColumnAlignment" />
+          <ScalarProperty Name="FieldLength" ColumnName="FieldLength" />
+          <ScalarProperty Name="ColumnWidth" ColumnName="ColumnWidth" />
+          <ScalarProperty Name="Hidden" ColumnName="Hidden" />
+          <ScalarProperty Name="IsGridField" ColumnName="IsGridField" />
+          <ScalarProperty Name="IsCreteriaField" ColumnName="IsCreteriaField" />
+          <ScalarProperty Name="AllowHidden" ColumnName="AllowHidden" />
+          <ScalarProperty Name="AllowResize" ColumnName="AllowResize" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="SearchLanguage" ColumnName="SearchLanguage" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="WildCard" ColumnName="WildCard" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="TextControl" ColumnName="TextControl" />
+          <ScalarProperty Name="ColumnStyle" ColumnName="ColumnStyle" />
+          <ScalarProperty Name="AllowRowFiltering" ColumnName="AllowRowFiltering" />
+          <ScalarProperty Name="SortIndicator" ColumnName="SortIndicator" />
+          <ScalarProperty Name="AutoFitColumns" ColumnName="AutoFitColumns" />
+          <ScalarProperty Name="PerformAutoResize" ColumnName="PerformAutoResize" />
+          <ScalarProperty Name="Focus" ColumnName="Focus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuildMenuItems">
+      <EntityTypeMapping TypeName="MatrixCRMModel.BuildMenuItem">
+        <MappingFragment StoreEntitySet="BuildMenuItems">
+          <ScalarProperty Name="GroupsName" ColumnName="GroupsName" />
+          <ScalarProperty Name="UsersFullName" ColumnName="UsersFullName" />
+          <ScalarProperty Name="MenusID" ColumnName="MenusID" />
+          <ScalarProperty Name="MenusCode" ColumnName="MenusCode" />
+          <ScalarProperty Name="MenusDisplayText" ColumnName="MenusDisplayText" />
+          <ScalarProperty Name="MenusActionName" ColumnName="MenusActionName" />
+          <ScalarProperty Name="MenusControllerName" ColumnName="MenusControllerName" />
+          <ScalarProperty Name="MenusURL" ColumnName="MenusURL" />
+          <ScalarProperty Name="MenusRank" ColumnName="MenusRank" />
+          <ScalarProperty Name="MenusParentID" ColumnName="MenusParentID" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GetClientsModules">
+      <EntityTypeMapping TypeName="MatrixCRMModel.GetClientsModule">
+        <MappingFragment StoreEntitySet="GetClientsModules">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ClientsID" ColumnName="ClientsID" />
+          <ScalarProperty Name="ClientsName" ColumnName="ClientsName" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubModuleID" ColumnName="SubModuleID" />
+          <ScalarProperty Name="SubDescription" ColumnName="SubDescription" />
+          <ScalarProperty Name="Dev_ID" ColumnName="Dev_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GetTicketDetailsByIDs">
+      <EntityTypeMapping TypeName="MatrixCRMModel.GetTicketDetailsByID">
+        <MappingFragment StoreEntitySet="GetTicketDetailsByID">
+          <ScalarProperty Name="TicketsID" ColumnName="TicketsID" />
+          <ScalarProperty Name="TicketsSubject" ColumnName="TicketsSubject" />
+          <ScalarProperty Name="TicketsCreatedTime" ColumnName="TicketsCreatedTime" />
+          <ScalarProperty Name="Tickets_TypeID" ColumnName="Tickets_TypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Tickets_StatusID" ColumnName="Tickets_StatusID" />
+          <ScalarProperty Name="StatusDesc" ColumnName="StatusDesc" />
+          <ScalarProperty Name="Tickets_Cust_ID" ColumnName="Tickets_Cust_ID" />
+          <ScalarProperty Name="ClientsName" ColumnName="ClientsName" />
+          <ScalarProperty Name="Tickets_User_ID" ColumnName="Tickets_User_ID" />
+          <ScalarProperty Name="UsersUserName" ColumnName="UsersUserName" />
+          <ScalarProperty Name="UsersFullName" ColumnName="UsersFullName" />
+          <ScalarProperty Name="Tickets_Mod_ID" ColumnName="Tickets_Mod_ID" />
+          <ScalarProperty Name="ModDesc" ColumnName="ModDesc" />
+          <ScalarProperty Name="Dev_ID" ColumnName="Dev_ID" />
+          <ScalarProperty Name="Tickets_Smod_ID" ColumnName="Tickets_Smod_ID" />
+          <ScalarProperty Name="SmodDesc" ColumnName="SmodDesc" />
+          <ScalarProperty Name="LookupsModulesID" ColumnName="LookupsModulesID" />
+          <ScalarProperty Name="Tickets_Priority_ID" ColumnName="Tickets_Priority_ID" />
+          <ScalarProperty Name="PriorityDesc" ColumnName="PriorityDesc" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Tickets_DeveloperID" ColumnName="Tickets_DeveloperID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TicketsAction" ColumnName="TicketsAction" />
+          <ScalarProperty Name="TicketsSummery" ColumnName="TicketsSummery" />
+          <ScalarProperty Name="TicketsDesc" ColumnName="TicketsDesc" />
+          <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+          <ScalarProperty Name="ClosedTime" ColumnName="ClosedTime" />
+          <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+          <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="BgColor" ColumnName="BgColor" />
+          <ScalarProperty Name="FgColor" ColumnName="FgColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddTranslationColumns" FunctionName="MatrixCRMModel.Store.AddTranslationColumns" />
+    <FunctionImportMapping FunctionImportName="GetDashboardBarsValues" FunctionName="MatrixCRMModel.Store.GetDashboardBarsValues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetDashboardBarsValues_Result">
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDashboardBarsValuesPerPeriod" FunctionName="MatrixCRMModel.Store.GetDashboardBarsValuesPerPeriod">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetDashboardBarsValuesPerPeriod_Result">
+          <ScalarProperty Name="Daily" ColumnName="Daily" />
+          <ScalarProperty Name="Opened" ColumnName="Opened" />
+          <ScalarProperty Name="Closed" ColumnName="Closed" />
+          <ScalarProperty Name="Archived" ColumnName="Archived" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDashboardBarsValuesPerPeriodTable" FunctionName="MatrixCRMModel.Store.GetDashboardBarsValuesPerPeriodTable">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetDashboardBarsValuesPerPeriodTable_Result">
+          <ScalarProperty Name="Daily" ColumnName="Daily" />
+          <ScalarProperty Name="Opened" ColumnName="Opened" />
+          <ScalarProperty Name="Closed" ColumnName="Closed" />
+          <ScalarProperty Name="Archived" ColumnName="Archived" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDashboardSliderValues" FunctionName="MatrixCRMModel.Store.GetDashboardSliderValues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetDashboardSliderValues_Result">
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDashboardSplitValues" FunctionName="MatrixCRMModel.Store.GetDashboardSplitValues">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetDashboardSplitValues_Result">
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMorrisDonutChart" FunctionName="MatrixCRMModel.Store.GetMorrisDonutChart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetMorrisDonutChart_Result">
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNVD3Chart10" FunctionName="MatrixCRMModel.Store.GetNVD3Chart10">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetNVD3Chart10_Result">
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNVD3Chart9" FunctionName="MatrixCRMModel.Store.GetNVD3Chart9">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.GetNVD3Chart9_Result">
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MatrixCRMModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MatrixCRMModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MatrixCRMModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MatrixCRMModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MatrixCRMModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MatrixCRMModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MatrixCRMModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MatrixCRMModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="stCRM_BuildView" FunctionName="MatrixCRMModel.Store.stCRM_BuildView" />
+    <FunctionImportMapping FunctionImportName="TabsDetailsInsert" FunctionName="MatrixCRMModel.Store.TabsDetailsInsert" />
+  </EntityContainerMapping>
+</Mapping>

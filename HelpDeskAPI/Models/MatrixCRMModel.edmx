@@ -1,0 +1,1075 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MatrixCRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CRM_LookupsCustomersCategories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsCustomersClasses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsVip" Type="bit" Nullable="false" />
+          <Property Name="SendSMS" Type="bit" />
+          <Property Name="SendEmail" Type="bit" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsPriorities">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rank" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="BgColor" Type="nvarchar" MaxLength="50" />
+          <Property Name="FgColor" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsTicketsStatuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsTicketsTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CRM_Users">
+          <Key>
+            <PropertyRef Name="UsersID" />
+          </Key>
+          <Property Name="UsersID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="150" />
+          <Property Name="UsersFullName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UsersGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UsersUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsersPassword" Type="nvarchar(max)" />
+          <Property Name="UsersEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsersMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsersPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsersPhoneExt" Type="nvarchar" MaxLength="50" />
+          <Property Name="UsersIsAdmin" Type="bit" />
+          <Property Name="UsersActive" Type="bit" />
+          <Property Name="SendEmail" Type="bit" />
+          <Property Name="SendSMS" Type="bit" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedByID" Type="bigint" />
+          <Property Name="Updated" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedByID" Type="bigint" />
+          <Property Name="UpdatedCounts" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeletedByID" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Modules">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TSS_Clients">
+          <Key>
+            <PropertyRef Name="ClientsID" />
+          </Key>
+          <Property Name="ClientsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ClientsName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Clients_ClassID" Type="bigint" Nullable="false" />
+          <Property Name="Clients_CategoryID" Type="bigint" Nullable="false" />
+          <Property Name="ClientsContractEndDate" Type="date" />
+          <Property Name="DefaultDeveloper_ID" Type="bigint" />
+          <Property Name="contactperson" Type="nvarchar" MaxLength="100" />
+          <Property Name="Telephone1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone2" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMSMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="TeamViewerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="TeamViewerPasswordHint" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedByID" Type="bigint" />
+          <Property Name="Updated" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedByID" Type="bigint" />
+          <Property Name="UpdatedCounts" Type="int" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeletedByID" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TSS_Tickets">
+          <Key>
+            <PropertyRef Name="TicketsID" />
+          </Key>
+          <Property Name="TicketsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TicketsSubject" Type="nvarchar" MaxLength="150" />
+          <Property Name="TicketsCreatedTime" Type="datetime" Nullable="false" />
+          <Property Name="Tickets_TypeID" Type="bigint" Nullable="false" />
+          <Property Name="Tickets_StatusID" Type="bigint" Nullable="false" />
+          <Property Name="Tickets_Client_ID" Type="bigint" Nullable="false" />
+          <Property Name="Tickets_Smod_ID" Type="bigint" />
+          <Property Name="Tickets_Priority_ID" Type="bigint" Nullable="false" />
+          <Property Name="Tickets_DeveloperID" Type="bigint" />
+          <Property Name="TicketsAction" Type="nvarchar" MaxLength="50" />
+          <Property Name="TicketsSummery" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TicketsDesc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsClosed" Type="bit" />
+          <Property Name="ClosedTime" Type="datetime" />
+          <Property Name="IsSolved" Type="bit" />
+          <Property Name="SolvedTime" Type="datetime" />
+          <Property Name="IsArchived" Type="bit" />
+          <Property Name="TakenFromClientUserID" Type="bigint" />
+          <Property Name="TakenFromClientUserFullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedByID" Type="bigint" />
+          <Property Name="Updated" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedByID" Type="bigint" />
+          <Property Name="UpdatedCounts" Type="int" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeletedByID" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Tickets_Mod_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TSS_TicketsActions">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TicketID" Type="bigint" />
+          <Property Name="msg" Type="varchar(max)" Nullable="false" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="IsSeen" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TSS_TicketsAttachedFiles">
+          <Key>
+            <PropertyRef Name="FilesID" />
+          </Key>
+          <Property Name="FilesID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Files_TicketsID" Type="bigint" />
+          <Property Name="ActionID" Type="bigint" />
+          <Property Name="FilesName" Type="varchar(max)" />
+          <Property Name="FilesTypes" Type="nvarchar" MaxLength="150" />
+          <Property Name="Created" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedByID" Type="bigint" />
+          <Property Name="Updated" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedByID" Type="bigint" />
+          <Property Name="UpdatedCounts" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeletedByID" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <Association Name="FK_TSS_Clients_CRM_CustomersCategories">
+          <End Role="CRM_LookupsCustomersCategories" Type="Self.CRM_LookupsCustomersCategories" Multiplicity="1" />
+          <End Role="TSS_Clients" Type="Self.TSS_Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsCustomersCategories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Clients">
+              <PropertyRef Name="Clients_CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Clients_CRM_CustomersClasses">
+          <End Role="CRM_LookupsCustomersClasses" Type="Self.CRM_LookupsCustomersClasses" Multiplicity="1" />
+          <End Role="TSS_Clients" Type="Self.TSS_Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsCustomersClasses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Clients">
+              <PropertyRef Name="Clients_ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Clients_CRM_Users">
+          <End Role="CRM_Users" Type="Self.CRM_Users" Multiplicity="0..1" />
+          <End Role="TSS_Clients" Type="Self.TSS_Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_Users">
+              <PropertyRef Name="UsersID" />
+            </Principal>
+            <Dependent Role="TSS_Clients">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_CRM_LookupsPriorities">
+          <End Role="CRM_LookupsPriorities" Type="Self.CRM_LookupsPriorities" Multiplicity="1" />
+          <End Role="TSS_Tickets" Type="Self.TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsPriorities">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_Priority_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_CRM_LookupsTicketsStatuses">
+          <End Role="CRM_LookupsTicketsStatuses" Type="Self.CRM_LookupsTicketsStatuses" Multiplicity="1" />
+          <End Role="TSS_Tickets" Type="Self.TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsTicketsStatuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_CRM_LookupsTicketsTypes">
+          <End Role="CRM_LookupsTicketsTypes" Type="Self.CRM_LookupsTicketsTypes" Multiplicity="1" />
+          <End Role="TSS_Tickets" Type="Self.TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsTicketsTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_Modules">
+          <End Role="Modules" Type="Self.Modules" Multiplicity="0..1" />
+          <End Role="TSS_Tickets" Type="Self.TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modules">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_Mod_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_TSS_Clients">
+          <End Role="TSS_Clients" Type="Self.TSS_Clients" Multiplicity="1" />
+          <End Role="TSS_Tickets" Type="Self.TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSS_Clients">
+              <PropertyRef Name="ClientsID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_TicketsActions_TSS_Tickets">
+          <End Role="TSS_Tickets" Type="Self.TSS_Tickets" Multiplicity="0..1" />
+          <End Role="TSS_TicketsActions" Type="Self.TSS_TicketsActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSS_Tickets">
+              <PropertyRef Name="TicketsID" />
+            </Principal>
+            <Dependent Role="TSS_TicketsActions">
+              <PropertyRef Name="TicketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_TicketsAttachedFiles_TSS_Tickets">
+          <End Role="TSS_Tickets" Type="Self.TSS_Tickets" Multiplicity="0..1" />
+          <End Role="TSS_TicketsAttachedFiles" Type="Self.TSS_TicketsAttachedFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSS_Tickets">
+              <PropertyRef Name="TicketsID" />
+            </Principal>
+            <Dependent Role="TSS_TicketsAttachedFiles">
+              <PropertyRef Name="Files_TicketsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="MatrixCRMModelStoreContainer">
+          <EntitySet Name="CRM_LookupsCustomersCategories" EntityType="Self.CRM_LookupsCustomersCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_LookupsCustomersClasses" EntityType="Self.CRM_LookupsCustomersClasses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_LookupsPriorities" EntityType="Self.CRM_LookupsPriorities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_LookupsTicketsStatuses" EntityType="Self.CRM_LookupsTicketsStatuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_LookupsTicketsTypes" EntityType="Self.CRM_LookupsTicketsTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRM_Users" EntityType="Self.CRM_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modules" EntityType="Self.Modules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSS_Clients" EntityType="Self.TSS_Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSS_Tickets" EntityType="Self.TSS_Tickets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSS_TicketsActions" EntityType="Self.TSS_TicketsActions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TSS_TicketsAttachedFiles" EntityType="Self.TSS_TicketsAttachedFiles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TSS_Clients_CRM_CustomersCategories" Association="Self.FK_TSS_Clients_CRM_CustomersCategories">
+            <End Role="CRM_LookupsCustomersCategories" EntitySet="CRM_LookupsCustomersCategories" />
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Clients_CRM_CustomersClasses" Association="Self.FK_TSS_Clients_CRM_CustomersClasses">
+            <End Role="CRM_LookupsCustomersClasses" EntitySet="CRM_LookupsCustomersClasses" />
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Clients_CRM_Users" Association="Self.FK_TSS_Clients_CRM_Users">
+            <End Role="CRM_Users" EntitySet="CRM_Users" />
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsPriorities" Association="Self.FK_TSS_Tickets_CRM_LookupsPriorities">
+            <End Role="CRM_LookupsPriorities" EntitySet="CRM_LookupsPriorities" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsTicketsStatuses" Association="Self.FK_TSS_Tickets_CRM_LookupsTicketsStatuses">
+            <End Role="CRM_LookupsTicketsStatuses" EntitySet="CRM_LookupsTicketsStatuses" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsTicketsTypes" Association="Self.FK_TSS_Tickets_CRM_LookupsTicketsTypes">
+            <End Role="CRM_LookupsTicketsTypes" EntitySet="CRM_LookupsTicketsTypes" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_Modules" Association="Self.FK_TSS_Tickets_Modules">
+            <End Role="Modules" EntitySet="Modules" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_TSS_Clients" Association="Self.FK_TSS_Tickets_TSS_Clients">
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_TicketsActions_TSS_Tickets" Association="Self.FK_TSS_TicketsActions_TSS_Tickets">
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+            <End Role="TSS_TicketsActions" EntitySet="TSS_TicketsActions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_TicketsAttachedFiles_TSS_Tickets" Association="Self.FK_TSS_TicketsAttachedFiles_TSS_Tickets">
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+            <End Role="TSS_TicketsAttachedFiles" EntitySet="TSS_TicketsAttachedFiles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MatrixCRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CRM_LookupsCustomersCategories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsCustomersClasses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsVip" Type="Boolean" Nullable="false" />
+          <Property Name="SendSMS" Type="Boolean" />
+          <Property Name="SendEmail" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsPriorities">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rank" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="BgColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FgColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsTicketsStatuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CRM_LookupsTicketsTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="MatrixCRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CRM_LookupsCustomersCategories" EntityType="Self.CRM_LookupsCustomersCategories" />
+          <EntitySet Name="CRM_LookupsCustomersClasses" EntityType="Self.CRM_LookupsCustomersClasses" />
+          <EntitySet Name="CRM_LookupsPriorities" EntityType="Self.CRM_LookupsPriorities" />
+          <EntitySet Name="CRM_LookupsTicketsStatuses" EntityType="Self.CRM_LookupsTicketsStatuses" />
+          <EntitySet Name="CRM_LookupsTicketsTypes" EntityType="Self.CRM_LookupsTicketsTypes" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MatrixCRMModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MatrixCRMModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="TSS_Tickets" EntityType="MatrixCRMModel.TSS_Tickets" />
+          <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsPriorities" Association="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsPriorities">
+            <End Role="CRM_LookupsPriorities" EntitySet="CRM_LookupsPriorities" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsTicketsStatuses" Association="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsTicketsStatuses">
+            <End Role="CRM_LookupsTicketsStatuses" EntitySet="CRM_LookupsTicketsStatuses" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_CRM_LookupsTicketsTypes" Association="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsTicketsTypes">
+            <End Role="CRM_LookupsTicketsTypes" EntitySet="CRM_LookupsTicketsTypes" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <EntitySet Name="TSS_TicketsAttachedFiles" EntityType="MatrixCRMModel.TSS_TicketsAttachedFiles" />
+          <AssociationSet Name="FK_TSS_TicketsAttachedFiles_TSS_Tickets" Association="MatrixCRMModel.FK_TSS_TicketsAttachedFiles_TSS_Tickets">
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+            <End Role="TSS_TicketsAttachedFiles" EntitySet="TSS_TicketsAttachedFiles" />
+          </AssociationSet>
+          <EntitySet Name="Modules" EntityType="MatrixCRMModel.Module" />
+          <AssociationSet Name="FK_TSS_Tickets_Modules" Association="MatrixCRMModel.FK_TSS_Tickets_Modules">
+            <End Role="Module" EntitySet="Modules" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <EntitySet Name="TSS_Clients" EntityType="MatrixCRMModel.TSS_Clients" />
+          <AssociationSet Name="FK_TSS_Clients_CRM_CustomersCategories" Association="MatrixCRMModel.FK_TSS_Clients_CRM_CustomersCategories">
+            <End Role="CRM_LookupsCustomersCategories" EntitySet="CRM_LookupsCustomersCategories" />
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Clients_CRM_CustomersClasses" Association="MatrixCRMModel.FK_TSS_Clients_CRM_CustomersClasses">
+            <End Role="CRM_LookupsCustomersClasses" EntitySet="CRM_LookupsCustomersClasses" />
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TSS_Tickets_TSS_Clients" Association="MatrixCRMModel.FK_TSS_Tickets_TSS_Clients">
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+          </AssociationSet>
+          <EntitySet Name="CRM_Users" EntityType="MatrixCRMModel.CRM_Users" />
+          <AssociationSet Name="FK_TSS_Clients_CRM_Users" Association="MatrixCRMModel.FK_TSS_Clients_CRM_Users">
+            <End Role="CRM_Users" EntitySet="CRM_Users" />
+            <End Role="TSS_Clients" EntitySet="TSS_Clients" />
+          </AssociationSet>
+          <EntitySet Name="TSS_TicketsActions" EntityType="MatrixCRMModel.TSS_TicketsActions" />
+          <AssociationSet Name="FK_TSS_TicketsActions_TSS_Tickets" Association="MatrixCRMModel.FK_TSS_TicketsActions_TSS_Tickets">
+            <End Role="TSS_Tickets" EntitySet="TSS_Tickets" />
+            <End Role="TSS_TicketsActions" EntitySet="TSS_TicketsActions" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="TSS_Tickets">
+          <Key>
+            <PropertyRef Name="TicketsID" />
+          </Key>
+          <Property Name="TicketsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketsSubject" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TicketsCreatedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tickets_TypeID" Type="Int64" Nullable="false" />
+          <Property Name="Tickets_StatusID" Type="Int64" Nullable="false" />
+          <Property Name="Tickets_Client_ID" Type="Int64" Nullable="false" />
+          <Property Name="Tickets_Mod_ID" Type="Int64" />
+          <Property Name="Tickets_Smod_ID" Type="Int64" />
+          <Property Name="Tickets_Priority_ID" Type="Int64" Nullable="false" />
+          <Property Name="Tickets_DeveloperID" Type="Int64" />
+          <Property Name="TicketsAction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TicketsSummery" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TicketsDesc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsClosed" Type="Boolean" />
+          <Property Name="ClosedTime" Type="DateTime" Precision="3" />
+          <Property Name="IsSolved" Type="Boolean" />
+          <Property Name="SolvedTime" Type="DateTime" Precision="3" />
+          <Property Name="IsArchived" Type="Boolean" />
+          <Property Name="TakenFromClientUserID" Type="Int64" />
+          <Property Name="TakenFromClientUserFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int64" />
+          <Property Name="Updated" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedByID" Type="Int64" />
+          <Property Name="UpdatedCounts" Type="Int32" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedByID" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="CRM_LookupsPriorities" Relationship="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsPriorities" FromRole="TSS_Tickets" ToRole="CRM_LookupsPriorities" />
+          <NavigationProperty Name="CRM_LookupsTicketsStatuses" Relationship="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsTicketsStatuses" FromRole="TSS_Tickets" ToRole="CRM_LookupsTicketsStatuses" />
+          <NavigationProperty Name="CRM_LookupsTicketsTypes" Relationship="MatrixCRMModel.FK_TSS_Tickets_CRM_LookupsTicketsTypes" FromRole="TSS_Tickets" ToRole="CRM_LookupsTicketsTypes" />
+          <NavigationProperty Name="TSS_TicketsAttachedFiles" Relationship="MatrixCRMModel.FK_TSS_TicketsAttachedFiles_TSS_Tickets" FromRole="TSS_Tickets" ToRole="TSS_TicketsAttachedFiles" />
+          <NavigationProperty Name="Module" Relationship="MatrixCRMModel.FK_TSS_Tickets_Modules" FromRole="TSS_Tickets" ToRole="Module" />
+          <NavigationProperty Name="TSS_Clients" Relationship="MatrixCRMModel.FK_TSS_Tickets_TSS_Clients" FromRole="TSS_Tickets" ToRole="TSS_Clients" />
+          <NavigationProperty Name="TSS_TicketsActions" Relationship="MatrixCRMModel.FK_TSS_TicketsActions_TSS_Tickets" FromRole="TSS_Tickets" ToRole="TSS_TicketsActions" />
+        </EntityType>
+        <Association Name="FK_TSS_Tickets_CRM_LookupsPriorities">
+          <End Type="MatrixCRMModel.CRM_LookupsPriorities" Role="CRM_LookupsPriorities" Multiplicity="1" />
+          <End Type="MatrixCRMModel.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsPriorities">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_Priority_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_CRM_LookupsTicketsStatuses">
+          <End Type="MatrixCRMModel.CRM_LookupsTicketsStatuses" Role="CRM_LookupsTicketsStatuses" Multiplicity="1" />
+          <End Type="MatrixCRMModel.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsTicketsStatuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_CRM_LookupsTicketsTypes">
+          <End Type="MatrixCRMModel.CRM_LookupsTicketsTypes" Role="CRM_LookupsTicketsTypes" Multiplicity="1" />
+          <End Type="MatrixCRMModel.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsTicketsTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TSS_TicketsAttachedFiles">
+          <Key>
+            <PropertyRef Name="FilesID" />
+          </Key>
+          <Property Name="FilesID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Files_TicketsID" Type="Int64" />
+          <Property Name="ActionID" Type="Int64" />
+          <Property Name="FilesName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FilesTypes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int64" />
+          <Property Name="Updated" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedByID" Type="Int64" />
+          <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedByID" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_TSS_TicketsAttachedFiles_TSS_Tickets">
+          <End Type="MatrixCRMModel.TSS_Tickets" Role="TSS_Tickets" Multiplicity="0..1" />
+          <End Type="MatrixCRMModel.TSS_TicketsAttachedFiles" Role="TSS_TicketsAttachedFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSS_Tickets">
+              <PropertyRef Name="TicketsID" />
+            </Principal>
+            <Dependent Role="TSS_TicketsAttachedFiles">
+              <PropertyRef Name="Files_TicketsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_TSS_Tickets_Modules">
+          <End Type="MatrixCRMModel.Module" Role="Module" Multiplicity="0..1" />
+          <End Type="MatrixCRMModel.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Module">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_Mod_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TSS_Clients">
+          <Key>
+            <PropertyRef Name="ClientsID" />
+          </Key>
+          <Property Name="ClientsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShortName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ClientsName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Clients_ClassID" Type="Int64" Nullable="false" />
+          <Property Name="Clients_CategoryID" Type="Int64" Nullable="false" />
+          <Property Name="ClientsContractEndDate" Type="DateTime" Precision="0" />
+          <Property Name="DefaultDeveloper_ID" Type="Int64" />
+          <Property Name="contactperson" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SMSMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeamViewerID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TeamViewerPasswordHint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int64" />
+          <Property Name="Updated" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedByID" Type="Int64" />
+          <Property Name="UpdatedCounts" Type="Int32" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedByID" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="ProductVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CRM_LookupsCustomersCategories" Relationship="MatrixCRMModel.FK_TSS_Clients_CRM_CustomersCategories" FromRole="TSS_Clients" ToRole="CRM_LookupsCustomersCategories" />
+          <NavigationProperty Name="CRM_LookupsCustomersClasses" Relationship="MatrixCRMModel.FK_TSS_Clients_CRM_CustomersClasses" FromRole="TSS_Clients" ToRole="CRM_LookupsCustomersClasses" />
+          <NavigationProperty Name="CRM_Users" Relationship="MatrixCRMModel.FK_TSS_Clients_CRM_Users" FromRole="TSS_Clients" ToRole="CRM_Users" />
+        </EntityType>
+        <Association Name="FK_TSS_Clients_CRM_CustomersCategories">
+          <End Type="MatrixCRMModel.CRM_LookupsCustomersCategories" Role="CRM_LookupsCustomersCategories" Multiplicity="1" />
+          <End Type="MatrixCRMModel.TSS_Clients" Role="TSS_Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsCustomersCategories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Clients">
+              <PropertyRef Name="Clients_CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Clients_CRM_CustomersClasses">
+          <End Type="MatrixCRMModel.CRM_LookupsCustomersClasses" Role="CRM_LookupsCustomersClasses" Multiplicity="1" />
+          <End Type="MatrixCRMModel.TSS_Clients" Role="TSS_Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_LookupsCustomersClasses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TSS_Clients">
+              <PropertyRef Name="Clients_ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TSS_Tickets_TSS_Clients">
+          <End Type="MatrixCRMModel.TSS_Clients" Role="TSS_Clients" Multiplicity="1" />
+          <End Type="MatrixCRMModel.TSS_Tickets" Role="TSS_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSS_Clients">
+              <PropertyRef Name="ClientsID" />
+            </Principal>
+            <Dependent Role="TSS_Tickets">
+              <PropertyRef Name="Tickets_Client_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CRM_Users">
+          <Key>
+            <PropertyRef Name="UsersID" />
+          </Key>
+          <Property Name="UsersID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShortName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UsersFullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UsersGUID" Type="Guid" Nullable="false" />
+          <Property Name="UsersUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UsersPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UsersEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UsersMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UsersPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UsersPhoneExt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UsersIsAdmin" Type="Boolean" />
+          <Property Name="UsersActive" Type="Boolean" />
+          <Property Name="SendEmail" Type="Boolean" />
+          <Property Name="SendSMS" Type="Boolean" />
+          <Property Name="Created" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByID" Type="Int64" />
+          <Property Name="Updated" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedByID" Type="Int64" />
+          <Property Name="UpdatedCounts" Type="Int32" Nullable="false" />
+          <Property Name="Deleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedByID" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="TSS_Clients" Relationship="MatrixCRMModel.FK_TSS_Clients_CRM_Users" FromRole="CRM_Users" ToRole="TSS_Clients" />
+        </EntityType>
+        <Association Name="FK_TSS_Clients_CRM_Users">
+          <End Type="MatrixCRMModel.CRM_Users" Role="CRM_Users" Multiplicity="0..1" />
+          <End Type="MatrixCRMModel.TSS_Clients" Role="TSS_Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRM_Users">
+              <PropertyRef Name="UsersID" />
+            </Principal>
+            <Dependent Role="TSS_Clients">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TSS_TicketsActions">
+          <Key>
+            <PropertyRef Name="ActionID" />
+          </Key>
+          <Property Name="ActionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketID" Type="Int64" />
+          <Property Name="msg" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="IsSeen" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_TSS_TicketsActions_TSS_Tickets">
+          <End Type="MatrixCRMModel.TSS_Tickets" Role="TSS_Tickets" Multiplicity="0..1" />
+          <End Type="MatrixCRMModel.TSS_TicketsActions" Role="TSS_TicketsActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TSS_Tickets">
+              <PropertyRef Name="TicketsID" />
+            </Principal>
+            <Dependent Role="TSS_TicketsActions">
+              <PropertyRef Name="TicketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MatrixCRMModelStoreContainer" CdmEntityContainer="MatrixCRMEntities">
+          <EntitySetMapping Name="CRM_LookupsCustomersCategories">
+            <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsCustomersCategories">
+              <MappingFragment StoreEntitySet="CRM_LookupsCustomersCategories">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_LookupsCustomersClasses">
+            <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsCustomersClasses">
+              <MappingFragment StoreEntitySet="CRM_LookupsCustomersClasses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsVip" ColumnName="IsVip" />
+                <ScalarProperty Name="SendSMS" ColumnName="SendSMS" />
+                <ScalarProperty Name="SendEmail" ColumnName="SendEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_LookupsPriorities">
+            <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsPriorities">
+              <MappingFragment StoreEntitySet="CRM_LookupsPriorities">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="BgColor" ColumnName="BgColor" />
+                <ScalarProperty Name="FgColor" ColumnName="FgColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_LookupsTicketsStatuses">
+            <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsTicketsStatuses">
+              <MappingFragment StoreEntitySet="CRM_LookupsTicketsStatuses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_LookupsTicketsTypes">
+            <EntityTypeMapping TypeName="MatrixCRMModel.CRM_LookupsTicketsTypes">
+              <MappingFragment StoreEntitySet="CRM_LookupsTicketsTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MatrixCRMModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MatrixCRMModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MatrixCRMModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MatrixCRMModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MatrixCRMModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MatrixCRMModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MatrixCRMModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MatrixCRMModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MatrixCRMModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MatrixCRMModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="TSS_Tickets">
+            <EntityTypeMapping TypeName="MatrixCRMModel.TSS_Tickets">
+              <MappingFragment StoreEntitySet="TSS_Tickets">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="TakenFromClientUserFullName" ColumnName="TakenFromClientUserFullName" />
+                <ScalarProperty Name="TakenFromClientUserID" ColumnName="TakenFromClientUserID" />
+                <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
+                <ScalarProperty Name="SolvedTime" ColumnName="SolvedTime" />
+                <ScalarProperty Name="IsSolved" ColumnName="IsSolved" />
+                <ScalarProperty Name="ClosedTime" ColumnName="ClosedTime" />
+                <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+                <ScalarProperty Name="TicketsDesc" ColumnName="TicketsDesc" />
+                <ScalarProperty Name="TicketsSummery" ColumnName="TicketsSummery" />
+                <ScalarProperty Name="TicketsAction" ColumnName="TicketsAction" />
+                <ScalarProperty Name="Tickets_DeveloperID" ColumnName="Tickets_DeveloperID" />
+                <ScalarProperty Name="Tickets_Priority_ID" ColumnName="Tickets_Priority_ID" />
+                <ScalarProperty Name="Tickets_Smod_ID" ColumnName="Tickets_Smod_ID" />
+                <ScalarProperty Name="Tickets_Mod_ID" ColumnName="Tickets_Mod_ID" />
+                <ScalarProperty Name="Tickets_Client_ID" ColumnName="Tickets_Client_ID" />
+                <ScalarProperty Name="Tickets_StatusID" ColumnName="Tickets_StatusID" />
+                <ScalarProperty Name="Tickets_TypeID" ColumnName="Tickets_TypeID" />
+                <ScalarProperty Name="TicketsCreatedTime" ColumnName="TicketsCreatedTime" />
+                <ScalarProperty Name="TicketsSubject" ColumnName="TicketsSubject" />
+                <ScalarProperty Name="TicketsID" ColumnName="TicketsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSS_TicketsAttachedFiles">
+            <EntityTypeMapping TypeName="MatrixCRMModel.TSS_TicketsAttachedFiles">
+              <MappingFragment StoreEntitySet="TSS_TicketsAttachedFiles">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="FilesTypes" ColumnName="FilesTypes" />
+                <ScalarProperty Name="FilesName" ColumnName="FilesName" />
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+                <ScalarProperty Name="Files_TicketsID" ColumnName="Files_TicketsID" />
+                <ScalarProperty Name="FilesID" ColumnName="FilesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="MatrixCRMModel.Module">
+              <MappingFragment StoreEntitySet="Modules">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSS_Clients">
+            <EntityTypeMapping TypeName="MatrixCRMModel.TSS_Clients">
+              <MappingFragment StoreEntitySet="TSS_Clients">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="TeamViewerPasswordHint" ColumnName="TeamViewerPasswordHint" />
+                <ScalarProperty Name="TeamViewerID" ColumnName="TeamViewerID" />
+                <ScalarProperty Name="SMSMobile" ColumnName="SMSMobile" />
+                <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+                <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+                <ScalarProperty Name="contactperson" ColumnName="contactperson" />
+                <ScalarProperty Name="DefaultDeveloper_ID" ColumnName="DefaultDeveloper_ID" />
+                <ScalarProperty Name="ClientsContractEndDate" ColumnName="ClientsContractEndDate" />
+                <ScalarProperty Name="Clients_CategoryID" ColumnName="Clients_CategoryID" />
+                <ScalarProperty Name="Clients_ClassID" ColumnName="Clients_ClassID" />
+                <ScalarProperty Name="ClientsName" ColumnName="ClientsName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="ClientsID" ColumnName="ClientsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CRM_Users">
+            <EntityTypeMapping TypeName="MatrixCRMModel.CRM_Users">
+              <MappingFragment StoreEntitySet="CRM_Users">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedByID" ColumnName="DeletedByID" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="UpdatedCounts" ColumnName="UpdatedCounts" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Updated" ColumnName="Updated" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="SendSMS" ColumnName="SendSMS" />
+                <ScalarProperty Name="SendEmail" ColumnName="SendEmail" />
+                <ScalarProperty Name="UsersActive" ColumnName="UsersActive" />
+                <ScalarProperty Name="UsersIsAdmin" ColumnName="UsersIsAdmin" />
+                <ScalarProperty Name="UsersPhoneExt" ColumnName="UsersPhoneExt" />
+                <ScalarProperty Name="UsersPhone" ColumnName="UsersPhone" />
+                <ScalarProperty Name="UsersMobile" ColumnName="UsersMobile" />
+                <ScalarProperty Name="UsersEmail" ColumnName="UsersEmail" />
+                <ScalarProperty Name="UsersPassword" ColumnName="UsersPassword" />
+                <ScalarProperty Name="UsersUserName" ColumnName="UsersUserName" />
+                <ScalarProperty Name="UsersGUID" ColumnName="UsersGUID" />
+                <ScalarProperty Name="UsersFullName" ColumnName="UsersFullName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TSS_TicketsActions">
+            <EntityTypeMapping TypeName="MatrixCRMModel.TSS_TicketsActions">
+              <MappingFragment StoreEntitySet="TSS_TicketsActions">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsSeen" ColumnName="IsSeen" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="msg" ColumnName="msg" />
+                <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+                <ScalarProperty Name="ActionID" ColumnName="ActionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
